@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="admin-nav">
+    <div class="nav-container">
+      <a href="/" class="logo"><span class="logo-icon">◇</span> Monkey Gym Admin</a>
+      <ul class="nav-links">
+        <li><a href="/" target="_blank"><i class="fas fa-external-link-alt"></i> View Site</a></li>
+        <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="admin-dashboard">
+    <aside class="admin-sidebar">
+      <ul>
+        <li><a href="#info" class="active" data-tab="info"><i class="fas fa-info-circle"></i> Info</a></li>
+        <li><a href="#services" data-tab="services"><i class="fas fa-dumbbell"></i> Services & Pricing</a></li>
+        <li><a href="#hero" data-tab="hero"><i class="fas fa-images"></i> Hero Images</a></li>
+        <li><a href="#aboutimages" data-tab="aboutimages"><i class="fas fa-image"></i> About Images</a></li>
+        <li><a href="#gallery" data-tab="gallery"><i class="fas fa-th"></i> Gallery</a></li>
+        <li><a href="#bookings" data-tab="bookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+        <li><a href="#members" data-tab="members"><i class="fas fa-users"></i> Members</a></li>
+        <li><a href="#newsletter" data-tab="newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+        <li><a href="#stats" data-tab="stats"><i class="fas fa-chart-bar"></i> Stats</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Info Tab -->
+      <section class="admin-tab active" id="tab-info">
+        <h2><i class="fas fa-info-circle"></i> Site Info</h2>
+        <form id="infoForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Main Title</label>
+              <input type="text" id="editTitle" name="title">
+            </div>
+            <div class="form-group">
+              <label>Subtitle</label>
+              <input type="text" id="editSubtitle" name="subtitle">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="editDescription" name="description" rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="editLocation" name="location">
+            </div>
+            <div class="form-group">
+              <label>Opening Hours</label>
+              <input type="text" id="editOpeningHours" name="openingHours" placeholder="Mon-Sat: 6am-10pm | Sun: 8am-8pm">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" id="editContactEmail" name="contactEmail">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text" id="editContactPhone" name="contactPhone">
+            </div>
+          </div>
+          <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save</button>
+        </form>
+      </section>
+
+      <!-- Services Tab -->
+      <section class="admin-tab" id="tab-services">
+        <h2><i class="fas fa-dumbbell"></i> Services</h2>
+        <p class="form-help">Manage the services offered. Each service must have a name, description, price and duration.</p>
+        <div class="services-admin" id="servicesAdmin">
+          <div class="service-entry" data-index="0">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Service Name</label>
+                <input type="text" class="svc-name" placeholder="Premium Gym">
+              </div>
+              <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="svc-price" placeholder="£60">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="svc-desc" placeholder="Service description">
+              </div>
+              <div class="form-group">
+                <label>Duration</label>
+                <input type="text" class="svc-duration" placeholder="1h30">
+              </div>
+            </div>
+            <button type="button" class="btn-secondary svc-remove" style="font-size:0.8rem;padding:8px 16px;border-color:#e74c3c;color:#e74c3c;margin-top:4px;"><i class="fas fa-trash"></i> Remove</button>
+            <hr style="border:none;border-top:1px solid rgba(0,0,0,0.06);margin:20px 0;">
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <button id="addServiceBtn" class="btn-secondary" style="font-size:0.8rem;padding:10px 20px;"><i class="fas fa-plus"></i> Add Service</button>
+          <button id="saveServicesBtn" class="btn-primary"><i class="fas fa-save"></i> Save Services</button>
+        </div>
+      </section>
+
+      <!-- Hero Tab -->
+      <section class="admin-tab" id="tab-hero">
+        <h2><i class="fas fa-images"></i> Hero Images</h2>
+        <p class="form-help">Upload up to 3 images for the homepage carousel.</p>
+        <div class="hero-preview" id="heroPreview">
+          <div class="hero-slot" data-slot="hero1">
+            <label>Slot 1 — Image</label>
+            <div class="preview-box"><img src="" alt=""><span>No image</span></div>
+            <input type="file" accept="image/*" class="hero-upload" data-field="hero1">
+            <label style="margin-top:8px;display:block;font-size:0.8rem;">Slot 1 — Video</label>
+            <div class="preview-box video-preview"><video src="" muted playsinline></video><span>No video</span></div>
+            <input type="file" accept="video/*" class="hero-upload" data-field="herovideo1">
+            <button type="button" class="btn-secondary hero-delete" data-slot="1" style="font-size:0.75rem;padding:6px 12px;border-color:#e74c3c;color:#e74c3c;margin-top:6px;"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+          <div class="hero-slot" data-slot="hero2">
+            <label>Slot 2 — Image</label>
+            <div class="preview-box"><img src="" alt=""><span>No image</span></div>
+            <input type="file" accept="image/*" class="hero-upload" data-field="hero2">
+            <label style="margin-top:8px;display:block;font-size:0.8rem;">Slot 2 — Video</label>
+            <div class="preview-box video-preview"><video src="" muted playsinline></video><span>No video</span></div>
+            <input type="file" accept="video/*" class="hero-upload" data-field="herovideo2">
+            <button type="button" class="btn-secondary hero-delete" data-slot="2" style="font-size:0.75rem;padding:6px 12px;border-color:#e74c3c;color:#e74c3c;margin-top:6px;"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+          <div class="hero-slot" data-slot="hero3">
+            <label>Slot 3 — Image</label>
+            <div class="preview-box"><img src="" alt=""><span>No image</span></div>
+            <input type="file" accept="image/*" class="hero-upload" data-field="hero3">
+            <label style="margin-top:8px;display:block;font-size:0.8rem;">Slot 3 — Video</label>
+            <div class="preview-box video-preview"><video src="" muted playsinline></video><span>No video</span></div>
+            <input type="file" accept="video/*" class="hero-upload" data-field="herovideo3">
+            <button type="button" class="btn-secondary hero-delete" data-slot="3" style="font-size:0.75rem;padding:6px 12px;border-color:#e74c3c;color:#e74c3c;margin-top:6px;"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+        </div>
+        <button id="uploadHeroBtn" class="btn-primary"><i class="fas fa-upload"></i> Update Images</button>
+      </section>
+
+      <!-- About Images Tab -->
+      <section class="admin-tab" id="tab-aboutimages">
+        <h2><i class="fas fa-image"></i> About Section Images</h2>
+        <p class="form-help">Upload the two images for the About section.</p>
+        <div class="about-preview" id="aboutPreview">
+          <div class="about-slot">
+            <label>Main Image (large)</label>
+            <div class="preview-box"><img src="" alt=""><span>No image</span></div>
+            <input type="file" accept="image/*" class="about-upload" data-field="aboutImage">
+          </div>
+          <div class="about-slot">
+            <label>Secondary Image (small)</label>
+            <div class="preview-box"><img src="" alt=""><span>No image</span></div>
+            <input type="file" accept="image/*" class="about-upload" data-field="aboutImageSmall">
+          </div>
+        </div>
+        <button id="uploadAboutBtn" class="btn-primary"><i class="fas fa-upload"></i> Update Images</button>
+      </section>
+
+      <!-- Gallery Tab -->
+      <section class="admin-tab" id="tab-gallery">
+        <h2><i class="fas fa-th"></i> Photo Gallery</h2>
+        <p class="form-help">Add or remove gallery photos.</p>
+        <div class="upload-area">
+          <input type="file" id="galleryInput" accept="image/*" multiple>
+          <button id="uploadGalleryBtn" class="btn-primary"><i class="fas fa-upload"></i> Add Photos</button>
+        </div>
+        <div class="gallery-manager" id="galleryManager"></div>
+      </section>
+
+      <!-- Bookings Tab -->
+      <section class="admin-tab" id="tab-bookings">
+        <h2><i class="fas fa-calendar-check"></i> Bookings</h2>
+        <p class="form-help">View and manage bookings made on the site.</p>
+        <div class="bookings-list" id="bookingsList">
+          <p style="color:var(--text-light);text-align:center;padding:40px 0;">Loading bookings...</p>
+        </div>
+      </section>
+
+      <!-- Members Tab -->
+      <section class="admin-tab" id="tab-members">
+        <h2><i class="fas fa-users"></i> Registered Members</h2>
+        <p class="form-help">List of members who created an account.</p>
+        <div class="members-list" id="membersList">
+          <p style="color:var(--text-light);text-align:center;padding:40px 0;">Loading...</p>
+        </div>
+      </section>
+
+      <!-- Newsletter Tab -->
+      <section class="admin-tab" id="tab-newsletter">
+        <h2><i class="fas fa-envelope"></i> Newsletter Subscribers</h2>
+        <p class="form-help">List of newsletter signups.</p>
+        <div class="newsletter-list" id="newsletterList">
+          <p style="color:var(--text-light);text-align:center;padding:40px 0;">Loading...</p>
+        </div>
+      </section>
+
+      <!-- Stats Tab -->
+      <section class="admin-tab" id="tab-stats">
+        <h2><i class="fas fa-chart-bar"></i> Statistics</h2>
+        <p class="form-help">Overview of site activity.</p>
+        <div class="stats-grid" id="statsGrid">
+          <p style="color:var(--text-light);text-align:center;padding:40px 0;">Chargement...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>

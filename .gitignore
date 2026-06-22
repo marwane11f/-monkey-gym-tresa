@@ -1,0 +1,8 @@
+node_modules/
+uploads/*
+!uploads/.gitkeep
+data/bookings.json
+data/members.json
+data/newsletter.json
+.env
+*.log

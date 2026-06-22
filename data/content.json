@@ -1,0 +1,69 @@
+{
+  "title": "Monkey Gym Tresa",
+  "subtitle": "Il tuo centro di salute e fitness",
+  "description": "Una nuova realtà sta prendendo forma, non una classica palestra ma un vero centro di salute. Palestra di nuova costruzione con macchinari MATRIX, innovativo sistema EMS, crioterapia, personal trainer esperti e area corsi funzionale.",
+  "location": "Zona artigianale, Madonna del Piano 10, 6995 Tresa, Svizzera",
+  "contactEmail": "monkeygmtresa@gmail.com",
+  "contactPhone": "+41 91 226 40 06",
+  "contactPhone2": "+41 76 426 89 19",
+  "openingHours": "Lun-Sab: 06:00-00:00 | Dom: 08:00-00:00",
+  "services": [
+    {
+      "name": "Palestra MATRIX",
+      "description": "Macchinari MATRIX di ultima generazione per un allenamento efficiente al massimo delle possibilità",
+      "price": "CHF 80/mese",
+      "duration": "Accesso illimitato"
+    },
+    {
+      "name": "EMS",
+      "description": "Innovativo sistema di elettrostimolazione, l'unico in zona. Tute leggerissime, senza fili, massima potenza",
+      "price": "CHF 60/sessione",
+      "duration": "30 min"
+    },
+    {
+      "name": "Crioterapia",
+      "description": "Trattamento innovativo per recupero muscolare, riduzione infiammazioni e benessere totale",
+      "price": "CHF 40/sessione",
+      "duration": "15 min"
+    },
+    {
+      "name": "Personal Training",
+      "description": "Trainer esperti e professionali ti seguiranno nel tuo percorso fitness con programmi personalizzati",
+      "price": "CHF 50/sessione",
+      "duration": "1h"
+    },
+    {
+      "name": "Yoga & Pilates",
+      "description": "Lezioni di yoga, pilates, tonificazione e GAG in sala corsi ben attrezzata",
+      "price": "CHF 25/lezione",
+      "duration": "1h"
+    },
+    {
+      "name": "Area Funzionale",
+      "description": "Sala corsi e area funzionale completa per allenamenti di gruppo e individuali",
+      "price": "CHF 35/sessione",
+      "duration": "Accesso libero"
+    }
+  ],
+  "heroImages": [],
+  "gallery": [
+    {
+      "filename": "1782088373143-unnamed (2).webp",
+      "url": "/uploads/1782088373143-unnamed (2).webp"
+    },
+    {
+      "filename": "1782088373156-unnamed (1).webp",
+      "url": "/uploads/1782088373156-unnamed (1).webp"
+    },
+    {
+      "filename": "1782088373161-unnamed.webp",
+      "url": "/uploads/1782088373161-unnamed.webp"
+    }
+  ],
+  "heroImage1": "",
+  "heroVideo1": "/uploads/1782088639140-Abbiamo deciso di distinguerci per completezza di servizi e professionalitÃ .. questa Ã¨ stata la.mp4",
+  "heroImage2": "",
+  "heroVideo2": "",
+  "aboutImage": "/uploads/1782088122743-unnamed (1).webp",
+  "aboutImageSmall": "/uploads/1782088169381-unnamed (2).webp"
+}
