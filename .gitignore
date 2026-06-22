@@ -6,3 +6,4 @@ data/members.json
 data/newsletter.json
 .env
 *.log
+startup2.err
