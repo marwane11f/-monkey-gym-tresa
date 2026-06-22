@@ -103,14 +103,23 @@ function renderHeroSlider(data) {
     img: data['heroImage' + i],
     video: data['heroVideo' + i]
   })).filter(s => s.img || s.video);
+  const introVideo = slider.querySelector('.hero-intro-video');
   if (items.length) {
-    slider.innerHTML = items.map((s, i) => {
-      const active = i === 0 ? ' active' : '';
+    if (introVideo) introVideo.style.display = 'none';
+    items.forEach((s, i) => {
+      const div = document.createElement('div');
+      div.className = 'slide' + (i === 0 ? ' active' : '');
       if (s.video) {
-        return `<div class="slide${active}"><video class="hero-slider-video" src="${s.video}" autoplay muted loop playsinline></video></div>`;
+        div.innerHTML = `<video class="hero-slider-video" src="${s.video}" autoplay muted loop playsinline></video>`;
+      } else {
+        div.style.backgroundImage = `url('${s.img}')`;
+        div.style.backgroundSize = 'cover';
+        div.style.backgroundPosition = 'center';
       }
-      return `<div class="slide${active}" style="background-image:url('${s.img}')"></div>`;
-    }).join('');
+      slider.appendChild(div);
+    });
+  } else {
+    if (introVideo) introVideo.style.display = '';
   }
   let current = 0;
   setInterval(() => {
